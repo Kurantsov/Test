@@ -1,5 +1,7 @@
 async function responseToServer() {
-  const request = await fetch("https://www.mrsoft.by/data.json");
+  const request = await fetch("https://www.mrsoft.by/data.json", {
+    method: "GET",
+  });
   const data = (await request.json()).data;
   return data;
 }
@@ -41,17 +43,17 @@ function substringFilter(input, output, checkbox, data) {
 }
 
 async function addWordsToOutput(data) {
-  const information = await data;
+  const responseData = await data;
   const output = document.querySelector(".output");
   const checkbox = document.querySelector(".checkbox");
   const input = document.querySelector(".input");
   const length_filter = document.querySelector(".length_filter");
   const substring_filter = document.querySelector(".substring_filter");
   length_filter.onclick = () => {
-    lengthFilter(input, output, information);
+    lengthFilter(input, output, responseData);
   };
   substring_filter.onclick = () => {
-    substringFilter(input, output, checkbox, information);
+    substringFilter(input, output, checkbox, responseData);
   };
 }
 
