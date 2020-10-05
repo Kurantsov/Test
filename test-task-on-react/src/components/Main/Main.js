@@ -20,7 +20,7 @@ function Main() {
       const responseData = await responseToServer();
       for (let i = 0; i < responseData.length; i++) {
         if (responseData[i].length > inputValue) {
-          result.push(responseData[i], " ");
+          result.push(responseData[i], ",");
         }
       }
       setOutputText(result);
@@ -47,7 +47,7 @@ function Main() {
           responseData[i].toUpperCase().includes(inputText.toUpperCase()) ===
           true
         ) {
-          result.push(responseData[i], " ");
+          result.push(responseData[i], ",");
         }
       }
       setOutputText(result);
