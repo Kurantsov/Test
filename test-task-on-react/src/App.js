@@ -1,10 +1,9 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import Main from "./components/Main/Main";
+import MusicPage from "./components/MusicPage";
 
 function App() {
-  return <Main />;
+  return <MusicPage />;
 }
 
 export default App;
